@@ -1,5 +1,5 @@
 import React from 'react'
-import { Progress, Space } from 'antd'
+import { Progress } from 'antd'
 const Analytics = ({allTransaction}) => {
 
 //category
@@ -29,7 +29,7 @@ const totalExpenseTurnoverPercent = (totalExpenseTurnOver / totalTurnover) * 100
   return (
     <div>
         <div className='row m-3'>
-          <div className='col-md-4'>
+          <div className='col-md-3'>
             <div className='card'>
               <div className='card-header'>
                 Total Transactions : {totalTransaction}
@@ -38,7 +38,6 @@ const totalExpenseTurnoverPercent = (totalExpenseTurnOver / totalTurnover) * 100
                 <h5 className='text-success'>Income : {totalIncomeTransactions.length}</h5>
                 <h5 className='text-danger'>Expense : {totalExpenseTransactions.length}</h5>
               </div>
-              <Space wrap>
               <Progress type="circle" 
               strokeColor={'green'} 
               className='mx-2'
@@ -49,10 +48,9 @@ const totalExpenseTurnoverPercent = (totalExpenseTurnOver / totalTurnover) * 100
               className='mx-2'
               percent={totalExpensePercent.toFixed(0)}
                />
-               </Space>
             </div>
           </div>
-          <div className='col-md-4'>
+          <div className='col-md-3'>
             <div className='card'>
               <div className='card-header'>
                 Total Turnover : {totalTurnover}
@@ -61,7 +59,6 @@ const totalExpenseTurnoverPercent = (totalExpenseTurnOver / totalTurnover) * 100
                 <h5 className='text-success'>Income : {totalIncomeTurnover}</h5>
                 <h5 className='text-danger'>Expense : {totalExpenseTurnOver}</h5>
               </div>
-              <Space wrap>
               <Progress type="circle" 
               strokeColor={'green'} 
               className='mx-2'
@@ -72,13 +69,11 @@ const totalExpenseTurnoverPercent = (totalExpenseTurnOver / totalTurnover) * 100
               className='mx-2'
               percent={totalExpenseTurnoverPercent.toFixed(0)}
                />
-               </Space>
             </div>
           </div>
-          </div>
+        
           
-        <div className='row mt-3'>
-          <div className='col-md-4'>
+          <div className='col-md-3'>
             <h4>Categorywise Income</h4>
             {
               categories.map(category =>{
@@ -97,7 +92,7 @@ const totalExpenseTurnoverPercent = (totalExpenseTurnOver / totalTurnover) * 100
             }
           
           </div>
-          <div className='col-md-4'>
+          <div className='col-md-3'>
             <h4>Categorywise Expense</h4>
             {
               categories.map(category =>{
@@ -117,6 +112,7 @@ const totalExpenseTurnoverPercent = (totalExpenseTurnOver / totalTurnover) * 100
           </div>
           </div>
           </div>
+          
         
   )
 }
